@@ -7,6 +7,7 @@ var logger = require('morgan');
 var majDevRouter = require('./routes/maj_dev');
 var ajoutDevRouter = require('./routes/ajout_dev');
 var getDevRouter = require('./routes/get_dev');
+var delDevRouter = require('./routes/del_dev');
 //Import database
 var db = require('./db/db');
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/maj_dev', majDevRouter);
 app.use('/ajout_dev', ajoutDevRouter);
 app.use('/get_dev', getDevRouter);
+app.use('/delete_dev', delDevRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
